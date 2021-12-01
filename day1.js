@@ -1,4 +1,5 @@
 const reader = require('./reader')
+const { performance } = require('perf_hooks');
 
 function partOne(input) {
     let total = 0
@@ -24,5 +25,9 @@ function partTwo(input) {
 }
 
 let input = reader.getInput("day1_input.txt", true)
+let startOne = performance.now();
 console.log(partOne(input))
+let endOne = performance.now()
 console.log(partTwo(input))
+let endTwo = performance.now();
+console.log(`Time 1: ${endOne - startOne}, Time 2: ${endTwo - endOne}`)
